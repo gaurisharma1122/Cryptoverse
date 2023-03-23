@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from "../../images/cryptocurrency.png";
 import {AiOutlineHome, AiOutlineFund, AiOutlineMoneyCollect, AiOutlineBulb} from "react-icons/ai";
 import "./Navbar.css"
+import { navLinks } from '../../data';
 
 
 const Navbar = () => {
@@ -14,10 +15,18 @@ const Navbar = () => {
       </div>
       <div className="nav-menu">
         <ul>
-          <Link to="/"><li><AiOutlineHome/> <span>Home</span></li></Link>
-          <Link to="/cryptocurrencies"><li><AiOutlineFund/> <span>Cryptocurrencies</span></li></Link>
-          <Link to="/exchanges"><li><AiOutlineMoneyCollect/> <span>Exchanges</span></li></Link>
-          <Link to="/news"><li><AiOutlineBulb/> <span>News</span></li></Link>
+          {
+            navLinks.map((item)=>{
+              return (
+                <Link key={item.id} to={item.link}>
+                  <li>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </li>
+                </Link>
+              )
+            })
+          }
         </ul>
       </div>
       
