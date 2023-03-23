@@ -1,0 +1,31 @@
+.navbar{
+    width: 25%;
+    background-color: #001f54;
+    height: 100vh;
+    padding: 4rem 1.2rem;
+}
+.nav-logo{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.nav-logo img{
+    width: 150px;
+    height: 150px;
+}
+.nav-logo h2{
+    font-size: 2rem;
+    color: #fff;
+}
+.nav-menu ul li{
+    padding: 15px 15px;
+}
+.nav-menu ul li:hover{
+    background-color: #034078;
+}
+.nav-menu ul li a{
+    font-size: 1.1rem;
+    color: #fff;
+}
