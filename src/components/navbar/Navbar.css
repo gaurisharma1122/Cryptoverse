@@ -21,11 +21,15 @@
 }
 .nav-menu ul li{
     padding: 15px 15px;
+    cursor: pointer;
 }
 .nav-menu ul li:hover{
-    background-color: #034078;
+    background-color: #1282a2;
 }
-.nav-menu ul li a{
+.nav-menu ul a{
     font-size: 1.1rem;
     color: #fff;
+}
+.nav-menu ul a span{
+    margin-left: 10px;
 }

@@ -1,10 +1,11 @@
 import React from 'react'
+import PageHeader from '../../components/pageHeader/PageHeader'
 import "./Exchanges.css"
 
 const Exchanges = () => {
   return (
     <div>
-      Exchanges
+      <PageHeader title="Exchanges"/>
     </div>
   )
 }

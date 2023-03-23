@@ -1,0 +1,24 @@
+.footer{
+    padding: 1.2rem 2rem;
+    background-color: #001f54;
+    color: #fff;
+    text-align: center;
+}
+.footer h4{
+    margin-bottom: 20px;
+}
+.footer ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer ul a{
+    color: #ebe9e9;
+    font-weight: 400;
+}
+footer ul a:hover{
+    color: #1282a2;
+}
+footer ul a li{
+    margin-right: 20px;
+}

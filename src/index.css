@@ -13,5 +13,8 @@ a{
 }
 .app{
   display: flex;
+}
+.routes{
+  width: 75%;
   
 }

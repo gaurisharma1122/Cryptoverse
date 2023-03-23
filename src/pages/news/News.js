@@ -1,10 +1,11 @@
 import React from 'react'
+import PageHeader from '../../components/pageHeader/PageHeader'
 import "./News.css"
 
 const News = () => {
   return (
     <div>
-      News
+      <PageHeader title="News"/>
     </div>
   )
 }

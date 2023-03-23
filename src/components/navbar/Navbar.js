@@ -14,10 +14,10 @@ const Navbar = () => {
       </div>
       <div className="nav-menu">
         <ul>
-          <li><Link to="/"><AiOutlineHome/> <span>Home</span></Link></li>
-          <li><Link to="/cryptocurrencies"><AiOutlineFund/> <span>Cryptocurrencies</span></Link></li>
-          <li><Link to="/exchanges"><AiOutlineMoneyCollect/> <span>Exchanges</span></Link></li>
-          <li><Link to="/news"><AiOutlineBulb/> <span>News</span></Link></li>
+          <Link to="/"><li><AiOutlineHome/> <span>Home</span></li></Link>
+          <Link to="/cryptocurrencies"><li><AiOutlineFund/> <span>Cryptocurrencies</span></li></Link>
+          <Link to="/exchanges"><li><AiOutlineMoneyCollect/> <span>Exchanges</span></li></Link>
+          <Link to="/news"><li><AiOutlineBulb/> <span>News</span></li></Link>
         </ul>
       </div>
       
