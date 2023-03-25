@@ -1,0 +1,30 @@
+.crypto-card{
+    border: .5px solid #bebebe;
+    background-color: #f7f7f7;
+}
+.crypto-card-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #bebebe;
+}
+.crypto-card-title h3{
+    font-size: 1.3rem;
+}
+.crypto-card-title img{
+    width: 60px;
+    height: 60px;
+}
+.crypto-card-info{
+    padding: 30px 15px;
+}
+.profit, .loss{
+    font-weight: 700;
+}
+.profit{
+    color: green;
+}
+.loss{
+    color: red;
+}

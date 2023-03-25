@@ -29,7 +29,6 @@ const AppProvider= ({ children })=>{
         .then( respData=>{
             dispatch({ type: 'SET_CRYPTODATA', payload: respData.data.stats});
             dispatch({ type: 'SET_CRYPTOCURRENCIES', payload: respData.data.coins});
-            
         });
     };
 

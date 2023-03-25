@@ -12,7 +12,7 @@ export const reducer = (state, action) => {
             break;
         case 'SET_CRYPTOCURRENCIES':
             {
-                return { ...state, cyptocurrencies: action.payload };
+                return { ...state, cryptocurrencies: action.payload };
             };
             break;
     }

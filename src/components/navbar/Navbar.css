@@ -1,8 +1,14 @@
 .navbar{
     width: 25%;
+}
+.nav-container{
+    width: 25%;
     background-color: #001f54;
     height: 100vh;
     padding: 4rem 1.2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .nav-logo{
     display: flex;

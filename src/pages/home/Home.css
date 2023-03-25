@@ -1,0 +1,30 @@
+.home-subtitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.home-subtitle h3 a{
+    color: #1282a2;
+}
+.home-subcontent{
+    margin: 1.7rem 0;
+}
+.global-crypto-subcontent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.global-crypto-item h5{
+    color: #777777;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+.global-crypto-item p{
+    font-size: 1.4rem;
+}
+.top-crypto-subcontent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
