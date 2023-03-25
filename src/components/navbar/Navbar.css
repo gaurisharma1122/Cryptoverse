@@ -23,13 +23,16 @@
     padding: 15px 15px;
     cursor: pointer;
 }
-.nav-menu ul li:hover{
+/*.nav-menu ul li:hover{
     background-color: #1282a2;
-}
+}*/
 .nav-menu ul a{
     font-size: 1.1rem;
     color: #fff;
 }
 .nav-menu ul a span{
     margin-left: 10px;
+}
+.active{
+    background-color: #1282a2;
 }

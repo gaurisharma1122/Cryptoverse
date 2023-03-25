@@ -5,15 +5,17 @@ import Cryptocurrencies from "./pages/cryptocurrencies/Cryptocurrencies";
 import Exchanges from "./pages/exchanges/Exchanges";
 import Home from "./pages/home/Home";
 import News from "./pages/news/News";
+import { useGlobalContext } from "./context/context";
 
 function App() {
+  const { setActiveNavLink }= useGlobalContext();
   return (
     <div className="app">
       <Navbar />
       <div className="routes">
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/cryptocurrencies" element={<Cryptocurrencies />} />
+          <Route path="/cryptocurrencies" element={<Cryptocurrencies />}/>
           <Route path="/exchanges" element={<Exchanges />} />
           <Route path="/news" element={<News />} />
         </Routes>

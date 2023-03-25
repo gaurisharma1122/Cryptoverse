@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../../images/cryptocurrency.png";
-import {AiOutlineHome, AiOutlineFund, AiOutlineMoneyCollect, AiOutlineBulb} from "react-icons/ai";
 import "./Navbar.css"
 import { navLinks } from '../../data';
+import { useGlobalContext } from '../../context/context';
 
 
 const Navbar = () => {
+
+  const { state, setActiveNavLink }= useGlobalContext();
+
   return (
     < nav className='navbar'>
       <div className="nav-logo">
@@ -19,7 +22,8 @@ const Navbar = () => {
             navLinks.map((item)=>{
               return (
                 <Link key={item.id} to={item.link}>
-                  <li>
+                  <li onClick={()=> setActiveNavLink(item.id)} 
+                  className={item.id === state.activeNavLink ?'active': undefined}>
                     {item.icon}
                     <span>{item.title}</span>
                   </li>
