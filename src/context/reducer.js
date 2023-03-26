@@ -20,5 +20,6 @@ export const reducer = (state, action) => {
                 return { ...state, news: action.payload };
             };
             break;
+        
     }
 }

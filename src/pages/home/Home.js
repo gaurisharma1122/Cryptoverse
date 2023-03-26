@@ -4,21 +4,23 @@ import PageHeader from '../../components/pageHeader/PageHeader';
 import { useGlobalContext } from '../../context/context';
 import Cryptocurrencies from '../cryptocurrencies/Cryptocurrencies';
 import CryptocurrenciesCard from '../../components/cryptocurrenciesCard/CryptocurrenciesCard';
+import NewsItem from '../../components/newsItem/NewsItem';
 import "./Home.css";
 import millify from 'millify';
 
 const Home = () => {
-  const { state, setActiveNavLink, fetchCryptocurrencies } = useGlobalContext();
+  const { state, setActiveNavLink, fetchCryptocurrencies, fetchNews } = useGlobalContext();
 
   useEffect(() => {
     fetchCryptocurrencies();
+    fetchNews();
     setActiveNavLink(1);
   }, []);
 
   return (
     <section className='home'>
       <PageHeader title="Home" />
-      
+
       <div className="container">
 
         <div className="global-crypto-stats">
@@ -56,7 +58,9 @@ const Home = () => {
             {
               state.cryptocurrencies.slice(0, 10).map((item) => {
                 return (
+                  
                   <CryptocurrenciesCard key={item.uuid}
+                    uuid={item.uuid}
                     name={item.name}
                     rank={item.rank}
                     iconUrl={item.iconUrl}
@@ -64,6 +68,7 @@ const Home = () => {
                     marketCap={item.marketCap}
                     change={item.change}
                   />
+                  
                 )
               })
             }
@@ -74,6 +79,24 @@ const Home = () => {
           <div className="home-subtitle">
             <h2>Latest Crypto News</h2>
             <h3><Link to="/news">Show More</Link></h3>
+          </div>
+          <div className="home-subcontent latest-crypto-subcontent">
+            {
+              state.news.slice(0, 10).map((item, index) => {
+                return (
+                  
+                    <NewsItem key={index}
+                      url={item.url}
+                      name={item.name}
+                      image={item.image}
+                      description={item.description}
+                      provider={item.provider}
+                      datePublished={item.datePublished}
+                    />
+                  
+                )
+              })
+            }
           </div>
         </div>
 

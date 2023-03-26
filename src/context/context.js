@@ -8,9 +8,9 @@ const initialState= {
     activeNavLink: 1,
     cryptoData: {},
     cryptocurrencies: [],
-    news: []
+    news: [], 
+    coinDetails: {}
 };
-
 
 const AppProvider= ({ children })=>{
 
@@ -32,7 +32,7 @@ const AppProvider= ({ children })=>{
             dispatch({ type: 'SET_CRYPTOCURRENCIES', payload: respData.data.coins});
         });
     };
-
+    
     const fetchNews= ()=>{
         fetch('https://bing-news-search1.p.rapidapi.com/news/search?count=50&q=cryptocurrency',
         {
@@ -51,6 +51,7 @@ const AppProvider= ({ children })=>{
         </AppContext.Provider>
     );
 };
+
 export default AppProvider;
 
 export const useGlobalContext= ()=>{

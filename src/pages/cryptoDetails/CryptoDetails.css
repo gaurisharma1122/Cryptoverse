@@ -1,0 +1,72 @@
+.crypto-details-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.crypto-details-info{
+    width: 60%;
+}
+.crypto-details-info div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: baseline;
+}
+.crypto-details-info h4{
+    font-size: 1.4rem;
+}
+.crypto-chart div{
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+.crypto-chart div h2{
+    color: #034078;
+}
+.select{
+    width: 40%;
+}
+.select label{
+    font-size: 1rem;
+    margin-right: 20px;
+}
+.select select{
+    width: 40%;
+    padding: 5px;
+    font-size: 1rem;
+    color: #5e5e5e;
+}
+.crypto-details-title h1{
+    color: #034078;
+    font-weight: 900;
+    font-size: 2rem;
+}
+.crypto-details-title img{
+    height: 70px;
+}
+.crypto-details-subcontent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+.statistics h3{
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #034078;
+}
+.statistics p{
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.statistics ul li{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: .5px solid #dadada;
+    font-weight: 500;
+    color: #5e5e5e;
+}
+
