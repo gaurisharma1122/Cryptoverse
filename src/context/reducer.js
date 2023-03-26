@@ -15,5 +15,10 @@ export const reducer = (state, action) => {
                 return { ...state, cryptocurrencies: action.payload };
             };
             break;
+        case 'SET_NEWS':
+            {
+                return { ...state, news: action.payload };
+            };
+            break;
     }
 }

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import { cryptocurrenciesHeader } from "../headers";
+import { cryptocurrenciesHeader, newsHeader } from "../headers";
 import { reducer } from "./reducer";
 
 export const AppContext= createContext();
@@ -7,7 +7,8 @@ export const AppContext= createContext();
 const initialState= {
     activeNavLink: 1,
     cryptoData: {},
-    cryptocurrencies: []
+    cryptocurrencies: [],
+    news: []
 };
 
 
@@ -32,15 +33,20 @@ const AppProvider= ({ children })=>{
         });
     };
 
-   /* useEffect(()=>{
-        fetchCryptocurrencies();
-        console.log("Cryptocurrencies:", state.cryptocurrencies);
-        console.log("Cryto Data:", state.cryptoData);
-
-    }, []);*/
+    const fetchNews= ()=>{
+        fetch('https://bing-news-search1.p.rapidapi.com/news/search?count=50&q=cryptocurrency',
+        {
+            method: 'GET', 
+            headers: newsHeader
+        })
+        .then( response=> response.json() )
+        .then( respData=>{
+            dispatch({ type: 'SET_NEWS', payload: respData.value });
+        });
+    };
 
     return (
-        <AppContext.Provider value={{ state, dispatch, setActiveNavLink, fetchCryptocurrencies }}>
+        <AppContext.Provider value={{ state, dispatch, setActiveNavLink, fetchCryptocurrencies, fetchNews }}>
             { children }
         </AppContext.Provider>
     );

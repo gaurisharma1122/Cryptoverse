@@ -1,0 +1,30 @@
+.news-item{
+    border: .5px solid #bebebe;
+    background-color: #f7f7f7;
+}
+.news-item-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.news-item-title, .news-item-footer{
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.news-item-title h3{
+    width: 70%;
+    font-size: 1.2rem;
+    color: black;
+}
+.news-item a img{
+   width: 25%;
+}
+.news-item-info{
+    padding: 0 15px;
+    color: #5e5e5e;
+}
+.news-item-footer{
+    color: #303030;
+}
