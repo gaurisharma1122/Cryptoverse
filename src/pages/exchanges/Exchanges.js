@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import ExchangesItem from '../../components/exchangesItem/ExchangesItem'
+import Loader from '../../components/loader/Loader'
 import PageHeader from '../../components/pageHeader/PageHeader'
 import { useGlobalContext } from '../../context/context'
 import { cryptocurrenciesHeader } from '../../headers'
 import "./Exchanges.css"
 
 const Exchanges = () => {
-  const { state, setActiveNavLink, fetchCryptocurrencies } = useGlobalContext();
+  const { state, setActiveNavLink, fetchCryptocurrencies, setIsLoading } = useGlobalContext();
   const [coinExchanges, setCoinExchanges] = useState([]);
 
   const fetchCoinExchanges = (id) => {
+    setIsLoading(true);
     fetch(`https://coinranking1.p.rapidapi.com/coin/${id}/exchanges?referenceCurrencyUuid=yhjMzLPhuIDl&limit=50`, {
       method: 'GET',
       headers: cryptocurrenciesHeader
@@ -17,12 +19,15 @@ const Exchanges = () => {
       .then(response => response.json())
       .then(respData => {
         setCoinExchanges(respData.data.exchanges);
+        setIsLoading(false);
       });
   };
 
   useEffect(() => {
+    setIsLoading(true);
     setActiveNavLink(3);
     fetchCryptocurrencies();
+    fetchCoinExchanges('Qwsogvtv82FCd');
   }, []);
 
   return (
@@ -41,14 +46,16 @@ const Exchanges = () => {
           </select>
         </form>
 
-        <div className="exchanges-info">
-          <div className="exchanges-info-heading">
-            <p>Name</p>
-            <p>Number of Markets</p>
-            <p>Price</p>
-            <p></p>
-          </div>
-            {
+        {
+          state.isLoading ? <Loader /> :
+            <div className="exchanges-info">
+              <div className="exchanges-info-heading">
+                <p>Name</p>
+                <p>Number of Markets</p>
+                <p>Price in USD</p>
+                <p></p>
+              </div>
+              {
                 coinExchanges.map((item) => {
                   return (
                     <ExchangesItem key={item.uuid}
@@ -56,13 +63,13 @@ const Exchanges = () => {
                       iconUrl={item.iconUrl}
                       numberOfMarkets={item.numberOfMarkets}
                       price={item.price}
-                      coinrankingUrl={item.coinrankingUrl}/>
+                      coinrankingUrl={item.coinrankingUrl} />
                   )
                 })
               }
-          
-        </div>
-        
+            </div>
+        }
+
       </div>
 
 

@@ -19,5 +19,6 @@
     padding: 15px 15px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 0.5fr;
+    gap: 10px;
     font-weight: 700;
 }
