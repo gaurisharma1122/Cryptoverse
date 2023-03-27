@@ -33,3 +33,27 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+@media screen and (max-width: 600px) {
+    .home-subtitle{
+        flex-direction: column;
+        align-items: start;
+    }
+    .home-subtitle h2{
+        font-size: 1.2rem;
+    }
+    .home-subtitle h3 a{
+        font-size: 1rem;
+    }
+    .global-crypto-item p{
+        font-size: 1.2rem;
+    }
+    .global-crypto-item h5{
+        font-size: 0.8rem;
+    }
+    .top-crypto-subcontent{
+        grid-template-columns: 1fr 1fr;
+    }
+    .latest-crypto-subcontent{
+        grid-template-columns: 1fr;
+    }
+}

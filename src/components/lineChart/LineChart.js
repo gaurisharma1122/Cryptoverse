@@ -29,7 +29,7 @@ const LineChart = ({ coinPrice, coinTimeStamp }) => {
 
   return (
     <section className='line-chart'>
-      <Line data={data} options={options}/>
+      <Line data={data} options={options} className="line"/>
     </section>
   );
 };

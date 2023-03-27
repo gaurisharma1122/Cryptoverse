@@ -42,3 +42,12 @@
 .active{
     background-color: #1282a2;
 }
+@media screen and (max-width: 768px) {
+    .navbar{
+        width: 100%;
+    }
+    .nav-container{
+        width: 100%;
+        position: inherit;
+    }
+}

@@ -22,3 +22,23 @@
 .crypto-card-info{
     padding: 30px 15px;
 }
+@media screen and (max-width: 600px){
+    .crypto-card-title{
+        flex-direction: column;
+        padding: 10px 10px;
+    }
+    .crypto-card-title h3{
+        font-size: 1rem;
+    }
+    .crypto-card-title img{
+        margin-top: 20px;
+        width: 30px;
+        height: 30px;
+    }
+    .crypto-card-info p{
+        font-size: 0.8rem;
+    }
+    .crypto-card-info{
+        padding: 20px 10px;
+    }
+}

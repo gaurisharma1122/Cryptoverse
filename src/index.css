@@ -30,3 +30,14 @@ a{
 .loss{
   color: red;
 }
+@media only screen and (max-width: 600px) {
+  .app{
+    flex-direction: column;
+  }
+  .container{
+    width: 90%;
+  }
+  .routes{
+    width: 100%;
+  }
+}

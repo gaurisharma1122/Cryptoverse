@@ -69,4 +69,40 @@
     font-weight: 500;
     color: #5e5e5e;
 }
+@media screen and (max-width: 600px){
+    .crypto-details-title h1{
+        font-size: 1.4rem;
+    }
+    .crypto-details-title img{
+        height: 50px;
+    }
+    .crypto-details-info{
+        width: 100%;
+    }
+    .crypto-details-info p, .select label, .statistics p{
+        font-size: 0.9rem;
+    }
+    .crypto-details-info h4{
+        font-size: 1.1rem;
+    }
+    .crypto-details-info div{
+        flex-direction: column;
+    }
+    .crypto-chart div h2, .statistics h3{
+        font-size: 1.2rem;
+    }
+    .crypto-chart div{
+        flex-direction: column;
+    }
+    .select{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .crypto-details-subcontent{
+        grid-template-columns: 1fr;
+    }
+    .statistics ul li{
+        font-size: 1rem;
+    }
+}
 

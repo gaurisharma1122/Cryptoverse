@@ -28,3 +28,16 @@
 .news-item-footer{
     color: #303030;
 }
+@media screen and (max-width: 600px){
+    .news-item-title h3{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .news-item-title{
+        flex-direction: column;
+    }
+    .news-item a img{
+        width: 100%;
+        margin-top: 20px;
+    }
+}

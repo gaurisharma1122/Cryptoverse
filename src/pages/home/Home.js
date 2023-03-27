@@ -31,7 +31,10 @@ const Home = () => {
         <div className="container">
 
           <div className="global-crypto-stats">
+            <div className="home-subtitle">
             <h2>Global Crypto Stats</h2>
+
+            </div>
             <div className="home-subcontent global-crypto-subcontent">
               <div className="global-crypto-item">
                 <h5>Total Cryptocurrencies</h5>
@@ -104,7 +107,6 @@ const Home = () => {
               }
             </div>
           </div>
-          <Loader/>
         </div>
               
       </section>
