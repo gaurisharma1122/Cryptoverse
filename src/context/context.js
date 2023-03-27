@@ -8,6 +8,7 @@ const initialState= {
     activeNavLink: 1,
     cryptoData: {},
     cryptocurrencies: [],
+    coinNames: [],
     news: [], 
     coinDetails: {}, 
     openNavbar: false, 
@@ -30,7 +31,7 @@ const AppProvider= ({ children })=>{
     };
 
     const fetchCryptocurrencies= ()=>{
-        fetch ('https://coinranking1.p.rapidapi.com/coins?limit=50',
+        fetch ('https://coinranking1.p.rapidapi.com/coins?limit=100',
         {
             method: 'GET', 
             headers: cryptocurrenciesHeader
