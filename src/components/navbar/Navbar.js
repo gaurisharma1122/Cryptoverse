@@ -4,11 +4,13 @@ import logo from "../../images/cryptocurrency.png";
 import "./Navbar.css"
 import { navLinks } from '../../data';
 import { useGlobalContext } from '../../context/context';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 
 const Navbar = () => {
 
-  const { state, setActiveNavLink } = useGlobalContext();
+  const { state, setActiveNavLink, setOpenNavbar} = useGlobalContext();
 
   return (
     < nav className='navbar'>
@@ -17,7 +19,15 @@ const Navbar = () => {
           <img src={logo} alt={logo} />
           <h2>Cryptoverse</h2>
         </div>
-        <div className="nav-menu">
+        <div className="nav-toggle">
+          {
+            state.openNavbar?
+            <AiOutlineCloseCircle onClick={()=> setOpenNavbar(!state.openNavbar)}/>:
+            <GiHamburgerMenu onClick={()=> setOpenNavbar(!state.openNavbar)}/>
+          }
+          
+        </div>
+        <div className={state.openNavbar?'nav-menu active-menu':'nav-menu'}>
           <ul>
             {
               navLinks.map((item) => {

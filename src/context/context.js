@@ -9,7 +9,9 @@ const initialState= {
     cryptoData: {},
     cryptocurrencies: [],
     news: [], 
-    coinDetails: {}
+    coinDetails: {}, 
+    openNavbar: false, 
+    isLoading: true
 };
 
 const AppProvider= ({ children })=>{
@@ -18,6 +20,13 @@ const AppProvider= ({ children })=>{
 
     const setActiveNavLink= (id)=>{
         dispatch ({ type: 'SET_ACTIVE_NAVLINK', payload: id });
+    };
+
+    const setOpenNavbar= (value)=>{
+        dispatch({ type: 'SET_OPEN_NAVBAR', payload: value  });
+    };
+    const setIsLoading= (value)=>{
+        dispatch({ type: 'SET_IS_LOADING', payload: value  });
     };
 
     const fetchCryptocurrencies= ()=>{
@@ -30,6 +39,7 @@ const AppProvider= ({ children })=>{
         .then( respData=>{
             dispatch({ type: 'SET_CRYPTODATA', payload: respData.data.stats});
             dispatch({ type: 'SET_CRYPTOCURRENCIES', payload: respData.data.coins});
+            setIsLoading(false);
         });
     };
     
@@ -42,11 +52,15 @@ const AppProvider= ({ children })=>{
         .then( response=> response.json() )
         .then( respData=>{
             dispatch({ type: 'SET_NEWS', payload: respData.value });
+            setIsLoading(false);
         });
     };
 
+    
+    
+
     return (
-        <AppContext.Provider value={{ state, dispatch, setActiveNavLink, fetchCryptocurrencies, fetchNews }}>
+        <AppContext.Provider value={{ state, dispatch, setActiveNavLink, fetchCryptocurrencies, fetchNews, setOpenNavbar, setIsLoading }}>
             { children }
         </AppContext.Provider>
     );

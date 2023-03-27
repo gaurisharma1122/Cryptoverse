@@ -8,17 +8,17 @@ import "./Cryptocurrencies.css"
 
 const Cryptocurrencies = () => {
 
-  const { state, fetchCryptocurrencies, setActiveNavLink } = useGlobalContext();
-  const [isLoading, setIsLoading] = useState(true);
+  const { state, fetchCryptocurrencies, setActiveNavLink, setIsLoading } = useGlobalContext();
+  
 
 
   useEffect(() => {
+    setIsLoading(true);
     fetchCryptocurrencies();
-    setIsLoading(false);
     setActiveNavLink(2);
   }, []);
 
-  if (isLoading === true) {
+  if (state.isLoading === true) {
     return <Loader />
   }
   else {

@@ -18,22 +18,28 @@
     margin-bottom: 40px;
 }
 .nav-logo img{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
 }
 .nav-logo h2{
+    font-size: 1.8rem;
+    color: #fff;
+}
+.nav-toggle{
     font-size: 2rem;
     color: #fff;
+    cursor: pointer;
+    display: none;
+}
+.nav-menu{
+    background-color: #001f54;
 }
 .nav-menu ul li{
     padding: 15px 15px;
     cursor: pointer;
 }
-/*.nav-menu ul li:hover{
-    background-color: #1282a2;
-}*/
 .nav-menu ul a{
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #fff;
 }
 .nav-menu ul a span{
@@ -42,12 +48,51 @@
 .active{
     background-color: #1282a2;
 }
-@media screen and (max-width: 768px) {
+.active-menu{
+    top: 15%!important;
+}
+@media screen and (max-width: 850px) {
     .navbar{
         width: 100%;
     }
     .nav-container{
         width: 100%;
-        position: inherit;
+        position: static;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.4rem 1.2rem;
+    }
+    .nav-logo{
+        margin-bottom: 0;
+        flex-direction: row;
+    }
+    .nav-logo img{
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+    .nav-logo h2{
+        font-size: 1.4rem;
+    }
+    .nav-menu{
+        width: 50%;
+        position: absolute;
+        top: -100%;
+        right: 0;
+        z-index: 2;
+    }
+    .nav-menu ul{
+        width: 80%;
+        margin: 4rem auto;
+    }
+    .nav-toggle{
+        display: block;
+    }
+}
+@media screen and (max-width: 600px){
+    .nav-menu{
+        width: 80%;
     }
 }

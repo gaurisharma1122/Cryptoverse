@@ -5,9 +5,8 @@
 .line{
     width: 100%;
 }
-@media screen and (max-width: 600px){
+@media only screen and (max-width: 850px) {
     .line-chart{
         width: 100%;
     }
-    
 }

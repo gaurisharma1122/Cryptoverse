@@ -6,16 +6,15 @@ import { useGlobalContext } from '../../context/context'
 import "./News.css"
 
 const News = () => {
-  const { state, setActiveNavLink, fetchNews } = useGlobalContext();
-  const [isLoading, setIsLoading] = useState(true);
+  const { state, setActiveNavLink, fetchNews, setIsLoading } = useGlobalContext();
 
   useEffect(() => {
+    setIsLoading(true);
     fetchNews();
-    setIsLoading(false);
     setActiveNavLink(4);
   }, []);
 
-  if (isLoading === true) {
+  if (state.isLoading === true) {
     return <Loader/>
   }
   else {

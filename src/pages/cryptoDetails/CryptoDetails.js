@@ -12,11 +12,12 @@ import Loader from '../../components/loader/Loader'
 const CryptoDetails = () => {
 
     const { coinId } = useParams();
+    const { state, setIsLoading }= useGlobalContext();
     const [coinDetails, setCoinDetails] = useState({});
     const [timePeriod, setTimePeriod] = useState('24h');
     const [coinPrice, setCoinPrice] = useState([]);
     const [coinTimeStamp, setCoinTimeStamp] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    
 
     const fetchCoinDetails = (coinId) => {
         fetch(`https://coinranking1.p.rapidapi.com/coin/${coinId}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h`,
@@ -27,7 +28,7 @@ const CryptoDetails = () => {
             .then(response => response.json())
             .then(respData => {
                 setCoinDetails(respData?.data?.coin);
-                setIsLoading(false);
+               setIsLoading(false);
             });
     };
 
@@ -47,6 +48,7 @@ const CryptoDetails = () => {
     };
 
     useEffect(() => {
+        setIsLoading(true);
         fetchCoinDetails(coinId);
     }, []);
 
@@ -72,7 +74,7 @@ const CryptoDetails = () => {
         { title: 'Circulating Supply', value: `$ ${coinDetails?.supply?.circulating && millify(coinDetails?.supply?.circulating)}`, icon: <AiOutlineExclamationCircle /> },
     ];
 
-    if (isLoading === true) {
+    if (state.isLoading === true) {
         return <Loader />
     }
     else {

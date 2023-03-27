@@ -1,5 +1,13 @@
 export const reducer = (state, action) => {
     switch (action.type) {
+        case 'SET_IS_LOADING':
+            {
+                return { ...state, isLoading: action.payload };
+            }
+        case 'SET_OPEN_NAVBAR':
+            {
+                return { ...state, openNavbar: action.payload };
+            }
         case 'SET_ACTIVE_NAVLINK':
             {
                 return { ...state, activeNavLink: action.payload };

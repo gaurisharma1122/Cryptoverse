@@ -10,18 +10,18 @@ import millify from 'millify';
 import Loader from '../../components/loader/Loader';
 
 const Home = () => {
-  const { state, setActiveNavLink, fetchCryptocurrencies, fetchNews } = useGlobalContext();
-  const [isLoading, setIsLoading] = useState(true);
+  const { state, setActiveNavLink, fetchCryptocurrencies, fetchNews, setIsLoading } = useGlobalContext();
+  
 
   useEffect(() => {
+    setIsLoading(true);
     fetchCryptocurrencies();
     fetchNews();
-    setIsLoading(false);
     setActiveNavLink(1);
   }, []);
 
-  if (isLoading === true) {
-    return <Loader />
+  if(state.isLoading === true){
+    return <Loader/>
   }
   else {
     return (
