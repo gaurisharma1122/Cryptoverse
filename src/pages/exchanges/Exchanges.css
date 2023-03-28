@@ -22,3 +22,27 @@
     gap: 10px;
     font-weight: 700;
 }
+@media screen and (max-width: 850px){
+    .exchanges-container h2{
+        font-size: 1.4rem;
+    }
+    .exchanges-container form label, .exchanges-container form select{
+        font-size: 0.8rem;
+    }
+    .exchanges-info-heading{
+        padding: 10px 10px;
+        grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
+        gap: 7px;
+    }
+    .exchanges-info-heading p{
+        font-size: 0.8rem;
+    }
+}
+@media screen and (max-width: 600px){
+    .exchanges-container h2{
+        font-size: 1.2rem;
+    }
+    .exchanges-info-heading p{
+        font-size: 0.6rem;
+    }
+}

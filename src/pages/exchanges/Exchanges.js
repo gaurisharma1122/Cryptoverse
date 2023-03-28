@@ -51,7 +51,7 @@ const Exchanges = () => {
             <div className="exchanges-info">
               <div className="exchanges-info-heading">
                 <p>Name</p>
-                <p>Number of Markets</p>
+                <p>No. of Markets</p>
                 <p>Price in USD</p>
                 <p></p>
               </div>
