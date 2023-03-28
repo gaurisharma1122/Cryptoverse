@@ -45,7 +45,7 @@ const AppProvider= ({ children })=>{
     };
     
     const fetchNews= ()=>{
-        fetch('https://bing-news-search1.p.rapidapi.com/news/search?count=50&q=cryptocurrency',
+        fetch('https://bing-news-search1.p.rapidapi.com/news/search?count=100&q=cryptocurrency',
         {
             method: 'GET', 
             headers: newsHeader
